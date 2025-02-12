@@ -184,3 +184,9 @@ document.getElementById("form-busca").addEventListener("submit", function(event)
     const resultados = buscarProdutos(nomeProduto);
     exibirResultados(resultados);
 });
+
+// Função para abrir/fechar o menu hambúrguer
+document.getElementById("menu-icon").addEventListener("click", function () {
+    const menuLinks = document.getElementById("menu-links");
+    menuLinks.classList.toggle("active"); // Adiciona/remove a classe "active"
+});
