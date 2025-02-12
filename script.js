@@ -1,6 +1,6 @@
 // Base de dados dos produtos
 const produtos = [
-    {codigo: 1096, nome: "BEIJINHO", imagem: "/assets/images/1096.png" },
+    {codigo: 1096, nome: "BEIJINHO", imagem: "/1096.png" },
     {codigo: 17834, nome: "BISCOITO CACETINHO"},
     {codigo: 5913,  nome: "BISCOITO CHAMPAGNE"},
     {codigo: 3056,  nome: "BOLACHA CAMELO"},
