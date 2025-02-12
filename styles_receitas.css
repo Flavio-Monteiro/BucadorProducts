@@ -1,6 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f1efee;
+    background-image: url(receita02.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     min-height: 100vh;
     margin: 10px;
@@ -8,22 +11,28 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+   
 }
+
 
 .container_receitas {
-    background: #eee7e3;
-    box-shadow: 2px 3px 3px rgba(127, 126, 126, 0.359);
+    background-color: #251B19;
+    box-shadow: 3px 4px 5px rgba(49, 40, 24, 0.629);
     padding: 10px;
-    width: 80%;
+    max-width: 1000px;
     min-height: 100%;
     display: flex;
+    justify-content: center;
+    margin-top: 2em;
     flex-wrap: wrap;
+    border-radius: 5px;
+   
 }
 
-/* ul li::before {
+ul li::before {
     content: "🗹"; 
     margin-right: 10px; 
-} */
+}
 .massa_doce,
 .massa_frances,
 .integral,
@@ -31,10 +40,11 @@ body {
 .biscoito,
 .regalia{
     width: 300px;
-    background: #fcfcfc;
-    margin: 10px;
+    background: #d8d7d6;
+    margin: 5px;
     border-radius: 5px;
     box-shadow: 2px 3px 3px rgba(87, 86, 86, 0.473);
+    border: 1px solid rgb(19, 19, 19);
 }
 .massa_doce ul li,
 .massa_frances ul li,
