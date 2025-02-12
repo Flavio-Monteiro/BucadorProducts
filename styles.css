@@ -1,26 +1,29 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     background-image: url(bg-pc.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     text-align: center;
-    min-height: 100vh;
-    margin: 10px;
+    min-height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 0;
    
 }
 html {
     width: 100vw;
-    margin: auto;
+    margin: 0;
 }
 
 .container {    
     min-width: 90%;
-    
+    margin-top: 2.8em;
     padding: 10px;
     background: #ffffff;
     border-radius: 10px;
@@ -126,7 +129,9 @@ p {
 .menu-container {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    height: 60px;
+    padding: 10px;
+    
 }
 
 .menu-icon {

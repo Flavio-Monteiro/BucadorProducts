@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>Calculadora de Proporção de Ingredientes</title>
     <style>
         /* Estilos gerais */
@@ -32,12 +34,22 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 900px;
+            min-height: 500px;
             margin: 0 auto;
             padding: 30px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+
+        }
+
+        article {
+
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         label {
@@ -46,7 +58,8 @@
             font-weight: bold;
         }
 
-        input, select {
+        input,
+        select {
             width: 100%;
             height: 40px;
             margin-top: 5px;
@@ -98,7 +111,9 @@
                 padding: 15px;
             }
 
-            input, select, button {
+            input,
+            select,
+            button {
                 font-size: 14px;
             }
         }
@@ -112,133 +127,145 @@
                 padding: 10px;
             }
 
-            input, select, button {
+            input,
+            select,
+            button {
                 font-size: 12px;
             }
         }
 
 
         /* Estilos do menu hambúrguer */
-.menu-header {
-    position: fixed; /* Fixa o menu no topo */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
-}
+        .menu-header {
+            position: fixed;
+            /* Fixa o menu no topo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            z-index: 1000;
+            /* Garante que o menu fique acima de outros elementos */
+        }
 
-.menu-container {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    padding: 10px;
-}
+        .menu-container {
+            display: flex;
+            align-items: center;
+            height: 60px;
+            padding: 10px;
+        }
 
-.menu-icon {
-    display: none; /* Esconde o ícone em telas maiores */
-    flex-direction: column;
-    cursor: pointer;
-}
+        .menu-icon {
+            display: none;
+            /* Esconde o ícone em telas maiores */
+            flex-direction: column;
+            cursor: pointer;
+        }
 
-.menu-icon span {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: 0.4s;
-}
+        .menu-icon span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
 
-.menu-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
+        .menu-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
 
-.menu-links li {
-    margin-left: 20px;
-}
+        .menu-links li {
+            margin-left: 20px;
+        }
 
-.menu-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-}
+        .menu-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
 
-.menu-links a:hover {
-    color: #f39c12;
-}
+        .menu-links a:hover {
+            color: #f39c12;
+        }
 
-/* Estilos para telas menores (responsivo) */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: flex; /* Mostra o ícone em telas menores */
-    }
+        /* Estilos para telas menores (responsivo) */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+                /* Mostra o ícone em telas menores */
+            }
 
-    .menu-links {
-        display: none; /* Esconde os links em telas menores */
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 50px; /* Ajuste conforme a altura do header */
-        left: 0;
-        width: 200px; /* Largura do menu lateral */
-        padding: 10px 0;
-    }
+            .menu-links {
+                display: none;
+                /* Esconde os links em telas menores */
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                /* Ajuste conforme a altura do header */
+                left: 0;
+                width: 200px;
+                /* Largura do menu lateral */
+                padding: 10px 0;
+            }
 
-    .menu-links.active {
-        display: flex; /* Mostra os links quando o menu está ativo */
-    }
+            .menu-links.active {
+                display: flex;
+                /* Mostra os links quando o menu está ativo */
+            }
 
-    .menu-links li {
-        margin: 10px 0;
-        text-align: left;
-        padding-left: 20px;
-       
-    }
-}
+            .menu-links li {
+                margin: 10px 0;
+                text-align: left;
+                padding-left: 20px;
+
+            }
+        }
     </style>
 </head>
+
 <body>
     <header class="menu-header">
         <nav>
-          <div class="menu-container">
-            <div class="menu-icon" id="menu-icon">
-              <span></span>
-              <span></span>
-              <span></span>
+            <div class="menu-container">
+                <div class="menu-icon" id="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu-links" id="menu-links">
+                    <li class="list"><a href="index.html">Home</a></li>
+                    <li class="list"><a href="#">Sobre</a></li>
+                    <li class="list">
+                        <a href="divisor.html">calculadora ingredientes</a>
+                    </li>
+                    <li class="list"><a href="receitas.html">Receitas</a></li>
+                </ul>
             </div>
-            <ul class="menu-links" id="menu-links">
-              <li class="list"><a href="index.html">Home</a></li>
-              <li class="list"><a href="sobre.html">Sobre</a></li>
-              <li class="list">
-                <a href="divisor.html">calculadora ingredientes</a>
-              </li>
-              <li class="list"><a href="receitas.html">Receitas</a></li>
-            </ul>
-          </div>
         </nav>
-      </header>
-    <div class="container">
-        <h1>Calculadora de Proporção de Ingredientes</h1>
-        <label for="recipe">Escolha a receita:</label>
-        <select id="recipe">
-            <option value="paoFrances">Pão Francês</option>
-            <option value="paoDoce">Pão Doce</option>
-            <option value="regaliaIntegral">Regalia Integral</option>
-            <option value="bolachaSeteCapas">Bolacha Sete Capas</option>
-            <option value="cacetinhoRosquinha">Cacetinho e Rosquinha</option>
-            <option value="massaRagalia">Massa Ragalia</option>
-        </select>
+    </header>
+    <section class="container">
+        <h1>Sobre</h1>
+        <article>
+            Esta página foi desenvolvida com o objetivo de facilitar o dia a dia dos colaboradores do setor de padaria,
+            especialmente aqueles que estão em fase de treinamento ou ainda se familiarizando com os produtos e seus
+            códigos.
 
-        <label for="farinha">Quantidade de farinha (kg):</label>
-        <input type="number" id="farinha" step="0.1" min="0">
+            Sabemos que, no atendimento, agilidade e precisão são fundamentais. Pensando nisso, criamos esta ferramenta
+            para que você possa localizar rapidamente os códigos dos produtos através do nome, evitando erros e tornando
+            o processo mais eficiente.
 
-        <button onclick="calcularProporcao()">Calcular</button>
+            Os dados apresentados, como nomes, códigos e imagens de produtos, são exclusivamente de uso interno e
+            baseados nas informações do setor. A utilização da logomarca e das referências visuais tem o propósito de
+            manter a identificação alinhada ao ambiente de trabalho, garantindo que os colaboradores reconheçam
+            facilmente as informações.
 
-        <div class="result" id="resultado"></div>
-    </div>
+            Meu compromisso é contribuir para a excelência no atendimento e para o desenvolvimento da equipe. Juntos,
+            podemos melhorar cada vez mais!
+        </article>
+    </section>
 
     <script>
         const receitas = {
@@ -329,11 +356,12 @@
         }
 
         // Função para abrir/fechar o menu hambúrguer
-document.getElementById("menu-icon").addEventListener("click", function () {
-    const menuLinks = document.getElementById("menu-links");
-    menuLinks.classList.toggle("active"); // Adiciona/remove a classe "active"
-});
+        document.getElementById("menu-icon").addEventListener("click", function () {
+            const menuLinks = document.getElementById("menu-links");
+            menuLinks.classList.toggle("active"); // Adiciona/remove a classe "active"
+        });
     </script>
     </script>
 </body>
+
 </html>

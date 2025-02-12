@@ -11,13 +11,17 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-   
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
 }
 
 
 .container_receitas {
     background-color: #251B19;
-    box-shadow: 3px 4px 5px rgba(49, 40, 24, 0.629);
+    box-shadow: 3px 3px 4px 5px rgba(49, 40, 24, 0.629);
     padding: 10px;
     max-width: 1000px;
     min-height: 100%;
@@ -26,19 +30,20 @@ body {
     margin-top: 2em;
     flex-wrap: wrap;
     border-radius: 5px;
-   
+
 }
 
 ul li::before {
-    content: "🗹"; 
-    margin-right: 10px; 
+    content: "🗹";
+    margin-right: 10px;
 }
+
 .massa_doce,
 .massa_frances,
 .integral,
 .sete_capas,
 .biscoito,
-.regalia{
+.regalia {
     width: 300px;
     background: #d8d7d6;
     margin: 5px;
@@ -46,35 +51,40 @@ ul li::before {
     box-shadow: 2px 3px 3px rgba(87, 86, 86, 0.473);
     border: 1px solid rgb(19, 19, 19);
 }
+
 .massa_doce ul li,
 .massa_frances ul li,
 .integral ul li,
 .sete_capas ul li,
 .biscoito ul li,
-.regalia ul li{
-  list-style-type: none;
-  text-align: justify;
-  margin: 5px;
+.regalia ul li {
+    list-style-type: none;
+    text-align: justify;
+    margin: 5px;
 }
 
 /* Estilos do menu hambúrguer */
 .menu-header {
-    position: fixed; /* Fixa o menu no topo */
+    position: fixed;
+    /* Fixa o menu no topo */
     top: 0;
     left: 0;
     width: 100%;
     background-color: #333;
-    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+    z-index: 1000;
+    /* Garante que o menu fique acima de outros elementos */
 }
 
 .menu-container {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    height: 60px;
+    padding: 10px;
 }
 
 .menu-icon {
-    display: none; /* Esconde o ícone em telas maiores */
+    display: none;
+    /* Esconde o ícone em telas maiores */
     flex-direction: column;
     cursor: pointer;
 }
@@ -111,28 +121,33 @@ ul li::before {
 /* Estilos para telas menores (responsivo) */
 @media (max-width: 768px) {
     .menu-icon {
-        display: flex; /* Mostra o ícone em telas menores */
+        display: flex;
+        /* Mostra o ícone em telas menores */
     }
 
     .menu-links {
-        display: none; /* Esconde os links em telas menores */
+        display: none;
+        /* Esconde os links em telas menores */
         flex-direction: column;
         background-color: #333;
         position: absolute;
-        top: 50px; /* Ajuste conforme a altura do header */
+        top: 50px;
+        /* Ajuste conforme a altura do header */
         left: 0;
-        width: 200px; /* Largura do menu lateral */
+        width: 200px;
+        /* Largura do menu lateral */
         padding: 10px 0;
     }
 
     .menu-links.active {
-        display: flex; /* Mostra os links quando o menu está ativo */
+        display: flex;
+        /* Mostra os links quando o menu está ativo */
     }
 
     .menu-links li {
         margin: 10px 0;
         text-align: left;
         padding-left: 20px;
-       
+
     }
 }
