@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validação de Acesso</title>
     <style>
+        *{padding: 0; margin: 0;}
         /* Estilos gerais */
         body {
             font-family: Arial, sans-serif;
@@ -19,12 +20,17 @@
         }
 
         .login-container {
-            background-color: #fff;
-            padding: 20px;
+            background-color: #fff;     
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
             text-align: center;
+            width: 420px;
+            
+        }
+        #loginForm {
+          text-align: center;
+          width: 90%;
+          padding: 10px;
         }
 
         h1 {
@@ -42,8 +48,8 @@
 
         input {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
+            height: 40px;
+            
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
@@ -51,6 +57,7 @@
 
         button {
             width: 100%;
+            height: 40px;
             padding: 10px;
             background-color: #28a745;
             color: white;
@@ -58,6 +65,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            margin-top: 15px;
         }
 
         button:hover {
@@ -71,10 +79,10 @@
         }
 
         /* Estilos responsivos */
-        @media (max-width: 480px) {
+        /* @media (max-width: 680px) {
             .login-container {
-                width: 90%;
-                padding: 15px;
+                width:90%;
+                
             }
 
             h1 {
@@ -84,7 +92,7 @@
             input, button {
                 font-size: 14px;
             }
-        }
+        } */
     </style>
 </head>
 <body>
@@ -118,7 +126,7 @@
 
             if (username === usuarioValido && password === senhaValida) {
                 // Redireciona para a página da calculadora
-                window.location.href = "calculadora.html"; // Substitua pelo nome da sua página de calculadora
+                window.location.href = "main.html"; // Substitua pelo nome da sua página de calculadora
             } else {
                 // Exibe mensagem de erro
                 document.getElementById('errorMessage').style.display = 'block';
