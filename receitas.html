@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=4, initial-scale=1.0" />
+    <title>Receitas</title>
+    <link rel="stylesheet" href="styles_receitas.css" />
+  </head>
+  <body>
+    <header class="menu-header">
+      <nav>
+        <div class="menu-container">
+          <div class="menu-icon" id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu-links" id="menu-links">
+            <li class="list"><a href="index.html">Home</a></li>
+            <li class="list"><a href="#">Sobre</a></li>
+            <li class="list">
+              <a href="divisor.html">calculadora ingredientes</a>
+            </li>
+            <li class="list"><a href="receitas.html">Receitas</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container_receitas">
+      <section class="massa_frances">
+        <h2>Massa Pão Francês</h2>
+        <ul>
+          <li>25 kg de farinha de trigo</li>
+          <li>250g Melhorador</li>
+          <li>150g fermento</li>
+          <li>500g de sal</li>
+          <li>250g açúcar</li>
+          <li>400g margarina</li>
+        </ul>
+      </section>
+      <section class="massa_doce">
+        <h2>Massa Pão Doce</h2>
+        <ul>
+          <li>30 kg de farinha de trigo</li>
+          <li>2300g Melhorador</li>
+          <li>600g de leite em pó</li>
+          <li>350g de sal</li>
+          <li>5kg açúcar</li>
+          <li>1kg margarina</li>
+          <li>3kg ovos</li>
+          <li>300g fermento</li>
+        </ul>
+      </section>
+      <section class="integral">
+        <h2>Massa Regalia Integral</h2>
+        <ul>
+          <li>5 kg de farinha de trigo</li>
+          <li>5 kg de farinha de trigo integral</li>
+          <li>50g de sal</li>
+          <li>10g Melhorador</li>
+          <li>2kg esponja de francês</li>
+        </ul>
+      </section>
+      <section class="sete_capas">
+        <h2>Massa Bolacha Sete capas</h2>
+        <ul>
+          <li>4kg açúcar</li>
+          <li>500g Sal</li>
+          <li>8 Cocos</li>
+          <li>3lt de Leite</li>
+          <li>800g Leite em pó</li>
+          <li>4kg Margarina</li>
+          <li>25kg Fariinha</li>
+        </ul>
+      </section>
+      <section class="biscoito">
+        <h2>Massa Cacetinho e Rosquinha</h2>
+        <ul>
+          <li>200g Sal</li>
+          <li>50g Açúcar</li>
+          <li>50g Fermento</li>
+          <li>500g Margarina</li>
+          <li>600g cCoco seco</li>
+          <li>1 Lt de leite de coco</li>
+          <li>10kg Farinha</li>
+        </ul>
+      </section>
+      <section class="regalia">
+        <h2>Massa Ragalia</h2>
+        <ul>
+          <li>200g Sal</li>
+          <li>800g Óleo</li>
+          <li>10g Fermento</li>
+          <li>2kg de esponja de Francês</li>
+          <li>10kg de Faarinha</li>
+          <li>em desenvolvimento</li>
+        </ul>
+      </section>
+    </div>
+    <script>
+      // Função para abrir/fechar o menu hambúrguer
+      document
+        .getElementById("menu-icon")
+        .addEventListener("click", function () {
+          const menuLinks = document.getElementById("menu-links");
+          menuLinks.classList.toggle("active"); // Adiciona/remove a classe "active"
+        });
+    </script>
+  </body>
+</html>

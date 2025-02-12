@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1efee;
+    text-align: center;
+    min-height: 100vh;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_receitas {
+    background: #eee7e3;
+    box-shadow: 2px 3px 3px rgba(127, 126, 126, 0.359);
+    padding: 10px;
+    width: 80%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ul li::before {
+    content: "🗹"; 
+    margin-right: 10px; 
+} */
+.massa_doce,
+.massa_frances,
+.integral,
+.sete_capas,
+.biscoito,
+.regalia{
+    width: 300px;
+    background: #fcfcfc;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 3px rgba(87, 86, 86, 0.473);
+}
+.massa_doce ul li,
+.massa_frances ul li,
+.integral ul li,
+.sete_capas ul li,
+.biscoito ul li,
+.regalia ul li{
+  list-style-type: none;
+  text-align: justify;
+  margin: 5px;
+}
+
+/* Estilos do menu hambúrguer */
+.menu-header {
+    position: fixed; /* Fixa o menu no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.menu-icon {
+    display: none; /* Esconde o ícone em telas maiores */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.menu-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-links li {
+    margin-left: 20px;
+}
+
+.menu-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-links a:hover {
+    color: #f39c12;
+}
+
+/* Estilos para telas menores (responsivo) */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex; /* Mostra o ícone em telas menores */
+    }
+
+    .menu-links {
+        display: none; /* Esconde os links em telas menores */
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 50px; /* Ajuste conforme a altura do header */
+        left: 0;
+        width: 200px; /* Largura do menu lateral */
+        padding: 10px 0;
+    }
+
+    .menu-links.active {
+        display: flex; /* Mostra os links quando o menu está ativo */
+    }
+
+    .menu-links li {
+        margin: 10px 0;
+        text-align: left;
+        padding-left: 20px;
+       
+    }
+}

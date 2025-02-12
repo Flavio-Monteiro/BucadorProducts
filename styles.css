@@ -192,3 +192,21 @@ p {
         padding-left: 20px;
     }
 }
+
+/* STYLES PÁGINA RECEITAS */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(bg-pc.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    min-height: 100vh;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+

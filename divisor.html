@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Proporção de Ingredientes</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            height: 40px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .result ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .result li {
+            margin-bottom: 10px;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            input, select, button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            input, select, button {
+                font-size: 12px;
+            }
+        }
+
+
+        /* Estilos do menu hambúrguer */
+.menu-header {
+    position: fixed; /* Fixa o menu no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.menu-icon {
+    display: none; /* Esconde o ícone em telas maiores */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.menu-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-links li {
+    margin-left: 20px;
+}
+
+.menu-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-links a:hover {
+    color: #f39c12;
+}
+
+/* Estilos para telas menores (responsivo) */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex; /* Mostra o ícone em telas menores */
+    }
+
+    .menu-links {
+        display: none; /* Esconde os links em telas menores */
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 50px; /* Ajuste conforme a altura do header */
+        left: 0;
+        width: 200px; /* Largura do menu lateral */
+        padding: 10px 0;
+    }
+
+    .menu-links.active {
+        display: flex; /* Mostra os links quando o menu está ativo */
+    }
+
+    .menu-links li {
+        margin: 10px 0;
+        text-align: left;
+        padding-left: 20px;
+       
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="menu-header">
+        <nav>
+          <div class="menu-container">
+            <div class="menu-icon" id="menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <ul class="menu-links" id="menu-links">
+              <li class="list"><a href="index.html">Home</a></li>
+              <li class="list"><a href="#">Sobre</a></li>
+              <li class="list">
+                <a href="divisor.html">calculadora ingredientes</a>
+              </li>
+              <li class="list"><a href="receitas.html">Receitas</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+        <h1>Calculadora de Proporção de Ingredientes</h1>
+        <label for="recipe">Escolha a receita:</label>
+        <select id="recipe">
+            <option value="paoFrances">Pão Francês</option>
+            <option value="paoDoce">Pão Doce</option>
+            <option value="regaliaIntegral">Regalia Integral</option>
+            <option value="bolachaSeteCapas">Bolacha Sete Capas</option>
+            <option value="cacetinhoRosquinha">Cacetinho e Rosquinha</option>
+            <option value="massaRagalia">Massa Ragalia</option>
+        </select>
+
+        <label for="farinha">Quantidade de farinha (kg):</label>
+        <input type="number" id="farinha" step="0.1" min="0">
+
+        <button onclick="calcularProporcao()">Calcular</button>
+
+        <div class="result" id="resultado"></div>
+    </div>
+
+    <script>
+        const receitas = {
+            paoFrances: {
+                farinha: 25, // 25 kg
+                melhorador: 250, // 250 g
+                fermento: 150, // 150 g
+                sal: 500, // 500 g
+                acucar: 250, // 250 g
+                margarina: 400 // 400 g
+            },
+            paoDoce: {
+                farinha: 30, // 30 kg
+                melhorador: 2300, // 2300 g
+                leitePo: 600, // 600 g
+                sal: 350, // 350 g
+                acucar: 5000, // 5000 g (5 kg)
+                margarina: 1000, // 1000 g (1 kg)
+                ovos: 3000, // 3000 g (3 kg)
+                fermento: 300 // 300 g
+            },
+            regaliaIntegral: {
+                farinha: 5, // 5 kg
+                farinhaIntegral: 5, // 5 kg
+                sal: 50, // 50 g
+                melhorador: 10, // 10 g
+                esponjaFrances: 2000 // 2000 g (2 kg)
+            },
+            bolachaSeteCapas: {
+                farinha: 25, // 25 kg
+                acucar: 4000, // 4000 g (4 kg)
+                sal: 500, // 500 g
+                cocos: 8, // 8 unidades
+                leite: 3000, // 3000 ml (3 litros)
+                leitePo: 800, // 800 g
+                margarina: 4000 // 4000 g (4 kg)
+            },
+            cacetinhoRosquinha: {
+                farinha: 10, // 10 kg
+                sal: 200, // 200 g
+                acucar: 50, // 50 g
+                fermento: 50, // 50 g
+                margarina: 500, // 500 g
+                cocoSeco: 600, // 600 g
+                leiteCoco: 1000 // 1000 ml (1 litro)
+            },
+            massaRagalia: {
+                farinha: 10, // 10 kg
+                sal: 200, // 200 g
+                oleo: 800, // 800 g
+                fermento: 10, // 10 g
+                esponjaFrances: 2000 // 2000 g (2 kg)
+            }
+        };
+
+        function calcularProporcao() {
+            const receitaSelecionada = document.getElementById('recipe').value;
+            const farinhaInput = parseFloat(document.getElementById('farinha').value);
+            const receita = receitas[receitaSelecionada];
+
+            if (isNaN(farinhaInput) || farinhaInput <= 0) {
+                alert("Por favor, insira uma quantidade válida de farinha.");
+                return;
+            }
+
+            let resultadoHTML = `<h2>Ingredientes Proporcionais:</h2><ul>`;
+
+            if (farinhaInput === receita.farinha) {
+                // Exibe os valores originais se a quantidade de farinha for igual à da receita
+                for (const [ingrediente, quantidade] of Object.entries(receita)) {
+                    if (ingrediente !== 'farinha') {
+                        resultadoHTML += `<li><strong>${ingrediente}:</strong> ${quantidade} ${ingrediente === 'cocos' || ingrediente === 'leiteCoco' || ingrediente === 'leite' ? '' : 'g'}</li>`;
+                    }
+                }
+            } else {
+                // Calcula a proporção para outras quantidades de farinha
+                const proporcao = farinhaInput / receita.farinha;
+                for (const [ingrediente, quantidade] of Object.entries(receita)) {
+                    if (ingrediente !== 'farinha') {
+                        const valorProporcional = (quantidade * proporcao).toFixed(0);
+                        resultadoHTML += `<li><strong>${ingrediente}:</strong> ${valorProporcional} ${ingrediente === 'cocos' || ingrediente === 'leiteCoco' || ingrediente === 'leite' ? '' : 'g'}</li>`;
+                    }
+                }
+            }
+
+            resultadoHTML += `</ul>`;
+            document.getElementById('resultado').innerHTML = resultadoHTML;
+        }
+
+        // Função para abrir/fechar o menu hambúrguer
+document.getElementById("menu-icon").addEventListener("click", function () {
+    const menuLinks = document.getElementById("menu-links");
+    menuLinks.classList.toggle("active"); // Adiciona/remove a classe "active"
+});
+    </script>
+    </script>
+</body>
+</html>
