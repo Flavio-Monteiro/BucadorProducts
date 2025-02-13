@@ -32,12 +32,6 @@ body {
     border-radius: 5px;
 
 }
-
-ul li::before {
-    content: "🗹";
-    margin-right: 10px;
-}
-
 .massa_doce,
 .massa_frances,
 .integral,
@@ -47,9 +41,10 @@ ul li::before {
     width: 300px;
     background: #d8d7d6;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 2px;
     box-shadow: 2px 3px 3px rgba(87, 86, 86, 0.473);
     border: 1px solid rgb(19, 19, 19);
+    padding: 10px;
 }
 
 .massa_doce ul li,
@@ -61,6 +56,15 @@ ul li::before {
     list-style-type: none;
     text-align: justify;
     margin: 5px;
+}
+.massa_doce ul li::before,
+.massa_frances ul li::before,
+.integral ul li::before,
+.sete_capas ul li::before,
+.biscoito ul li::before,
+.regalia ul li::before {
+    content: "✅";
+    margin-right: 10px;
 }
 
 /* Estilos do menu hambúrguer */
@@ -117,7 +121,9 @@ ul li::before {
 .menu-links a:hover {
     color: #f39c12;
 }
-
+#calculador {
+    color: #f39c12;
+}
 /* Estilos para telas menores (responsivo) */
 @media (max-width: 768px) {
     .menu-icon {

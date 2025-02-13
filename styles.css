@@ -168,7 +168,9 @@ p {
 .menu-links a:hover {
     color: #f39c12;
 }
-
+#calculador {
+    color: #f39c12;
+}
 /* Estilos para telas menores (responsivo) */
 @media (max-width: 768px) {
     .menu-icon {
