@@ -240,9 +240,18 @@
         <input type="number" id="farinha" step="0.1" min="0">
 
         <button onclick="calcularProporcao()">Calcular</button>
+        <details>
+            <summary>Regras de Cálculos</summary>
+            <p>Qtde farinha kg /  Qtde a fazer = x</p>
+            <p>X * valor ingredientes</p>
+            <p>Ex: Qtde Farinha 25kg / Qtde a Fazer 10kg -> 25 / 10 = 0,04 </p>
+            <p>múltiplicar 0,4 pela quantidade dos demais ingredientes</p>
 
+          </details>
         <div class="result" id="resultado"></div>
     </div>
+   
+      
 
     <script>
         const receitas = {
