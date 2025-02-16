@@ -40,7 +40,7 @@ html {
 }
 #logo-pc {
     margin-top: 20px;
-    width: 250px;
+    width: 320px;
 }
 h1 {
     color: #333;
@@ -204,7 +204,16 @@ p {
         padding-left: 20px;
     }
 }
-
+@media (max-width: 768px) {
+    .container {
+       width: 100%;
+    }
+    #logo-pc{
+        width: 100%;
+    }
+    button,input{
+        width: 300px;
+    }
 /* STYLES PÁGINA RECEITAS */
 .body-receita {
     font-family: Arial, sans-serif;
@@ -221,4 +230,3 @@ p {
     flex-direction: column;
    
 }
-
